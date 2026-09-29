@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Pizza - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Pizza Mania - Delicious Italian & Indian Pizzas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -31,7 +31,7 @@
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-		      <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizza<br><small>Delicous</small></a>
+		      <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizza<br><small>Delicious</small></a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="oi oi-menu"></span> Menu
 		      </button>
@@ -43,6 +43,7 @@
 	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link text-warning font-weight-bold" data-toggle="modal" data-target="#cartModal"><span class="icon-shopping-cart"></span> Cart <span class="badge badge-primary cart-count-badge d-none" style="background: #fac564; color: #000; border-radius: 50%; font-size: 11px;">0</span></a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -57,12 +58,12 @@
 
             <div class="col-md-6 col-sm-12 ftco-animate">
             	<span class="subheading">Delicious</span>
-              <h1 class="mb-4">Italian Cuizine</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+              <h1 class="mb-4">Italian Cuisine</h1>
+              <p class="mb-4 mb-md-5">Handcrafted authentic Italian pizzas made with fresh mozzarella, stone-baked crusts, and rich secret sauces.</p>
+              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="menu.html" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
             <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_1.png" class="img-fluid" alt="">
+            	<img src="images/bg_1.png" class="img-fluid" alt="Delicious Pizza">
             </div>
 
           </div>
@@ -77,11 +78,11 @@
             <div class="col-md-6 col-sm-12 order-md-last ftco-animate">
             	<span class="subheading">Crunchy</span>
               <h1 class="mb-4">Italian Pizza</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+              <p class="mb-4 mb-md-5">Crispy stone-baked base topped with premium herbs, melted cheeses, and farm-fresh veggies.</p>
+              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="menu.html" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
             <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_2.png" class="img-fluid" alt="">
+            	<img src="images/bg_2.png" class="img-fluid" alt="Crunchy Italian Pizza">
             </div>
 
           </div>
@@ -96,8 +97,8 @@
             <div class="col-md-7 col-sm-12 text-center ftco-animate">
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">We cooked your desired Pizza Recipe</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="#" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
+              <p class="mb-4 mb-md-5">Experience the finest blend of traditional artisan baking and vibrant Indian flavor pairings.</p>
+              <p><a href="#" class="btn btn-primary p-3 px-xl-4 py-xl-3">Order Now</a> <a href="menu.html" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">View Menu</a></p>
             </div>
 
           </div>
@@ -113,22 +114,22 @@
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-phone"></span></div>
 	    					<div class="text">
-	    						<h3>000 (123) 456 7890</h3>
-	    						<p>A small river named Duden flows</p>
+	    						<h3>+91 98765 43210</h3>
+	    						<p>24/7 Hot Pizza Delivery Hotline</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-my_location"></span></div>
 	    					<div class="text">
-	    						<h3>198 West 21th Street</h3>
-	    						<p>Suite 721 New York NY 10016</p>
+	    						<h3>Connaught Place</h3>
+	    						<p>Inner Circle, Block A, New Delhi 110001</p>
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
 	    					<div class="icon"><span class="icon-clock-o"></span></div>
 	    					<div class="text">
-	    						<h3>Open Monday-Friday</h3>
-	    						<p>8:00am - 9:00pm</p>
+	    						<h3>Open All Days</h3>
+	    						<p>10:00am - 11:30pm</p>
 	    					</div>
 	    				</div>
 	    			</div>
@@ -148,10 +149,10 @@
     	<div class="one-half img" style="background-image: url(images/about.jpg);"></div>
     	<div class="one-half ftco-animate">
         <div class="heading-section ftco-animate ">
-          <h2 class="mb-4">Welcome to <span class="flaticon-pizza">Pizza</span> A Restaurant</h2>
+          <h2 class="mb-4">Welcome to <span class="flaticon-pizza">Pizza Mania</span> Restaurant</h2>
         </div>
         <div>
-  				<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
+  				<p>At Pizza Mania, we craft happiness slice by slice. Using authentic Italian wood-fire ovens, fresh local herbs, and signature homemade cheese blends, every pizza is prepared fresh to order. Whether you crave classic Margheritas or spicy Indian fusion toppings, we bring world-class quality straight to your table or doorstep.</p>
   			</div>
     	</div>
     </section>
@@ -162,7 +163,7 @@
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
             <h2 class="mb-4">Our Services</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>From cloud-kitchen speed deliveries to cozy dine-in moments, discover what makes us special.</p>
           </div>
         </div>
     		<div class="row">
@@ -172,8 +173,8 @@
               	<span class="flaticon-diet"></span>
               </div>
               <div class="media-body">
-                <h3 class="heading">Healthy Foods</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Healthy Ingredients</h3>
+                <p>Made with 100% organic flour, cold-pressed olive oil, fresh veggies, and high-protein mozzarella cheese.</p>
               </div>
             </div>      
           </div>
@@ -184,7 +185,7 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Fastest Delivery</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>30-minute hot delivery guarantee straight from our ovens to your doorstep in insulated thermal bags.</p>
               </div>
             </div>      
           </div>
@@ -193,7 +194,7 @@
               <div class="icon d-flex justify-content-center align-items-center mb-5"><span class="flaticon-pizza-1"></span></div>
               <div class="media-body">
                 <h3 class="heading">Original Recipes</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>Secret family dough recipe perfected over generations with authentic Italian seasoning blends.</p>
               </div>
             </div>    
           </div>
@@ -206,7 +207,7 @@
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
             <h2 class="mb-4">Hot Pizza Meals</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>Savor our bestselling artisan pizzas crafted with premium cheeses and fresh herbs.</p>
           </div>
         </div>
     	</div>
@@ -217,8 +218,8 @@
     					<a href="#" class="img" style="background-image: url(images/pizza-1.jpg);"></a>
     					<div class="text p-4">
     						<h3>Italian Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia </p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+    						<p>Classic Neapolitan crust with rich tomato sauce, fresh basil leaves, and creamy mozzarella.</p>
+    						<p class="price"><span>₹249</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
     					</div>
     				</div>
     			</div>
@@ -227,8 +228,8 @@
     					<a href="#" class="img" style="background-image: url(images/pizza-2.jpg);"></a>
     					<div class="text p-4">
     						<h3>Greek Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+    						<p>Topped with kalamata olives, tangy feta cheese, red onions, bell peppers, and oregano.</p>
+    						<p class="price"><span>₹249</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
     					</div>
     				</div>
     			</div>
@@ -237,8 +238,8 @@
     					<a href="#" class="img" style="background-image: url(images/pizza-3.jpg);"></a>
     					<div class="text p-4">
     						<h3>Caucasian Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+    						<p>Rich melted herb butter crust topped with roasted garlic, smoked peppers, and mozzarella.</p>
+    						<p class="price"><span>₹249</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
     					</div>
     				</div>
     			</div>
@@ -248,8 +249,8 @@
     					<a href="#" class="img order-lg-last" style="background-image: url(images/pizza-4.jpg);"></a>
     					<div class="text p-4">
     						<h3>American Pizza</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia </p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+    						<p>Loaded with double cheese, spicy jalapenos, sweet corn, and smoky BBQ sauce drizzle.</p>
+    						<p class="price"><span>₹249</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
     					</div>
     				</div>
     			</div>
@@ -257,9 +258,9 @@
     				<div class="services-wrap d-flex">
     					<a href="#" class="img order-lg-last" style="background-image: url(images/pizza-5.jpg);"></a>
     					<div class="text p-4">
-    						<h3>Tomatoe Pie</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+    						<h3>Tomato Pie</h3>
+    						<p>Authentic thick crust layered with crushed plum tomatoes, garlic, extra virgin olive oil, and herbs.</p>
+    						<p class="price"><span>₹249</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
     					</div>
     				</div>
     			</div>
@@ -268,120 +269,149 @@
     					<a href="#" class="img order-lg-last" style="background-image: url(images/pizza-6.jpg);"></a>
     					<div class="text p-4">
     						<h3>Margherita</h3>
-    						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-    						<p class="price"><span>$2.90</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
+    						<p>Simple perfection with hand-crushed San Marzano tomatoes, fresh mozzarella, and extra basil.</p>
+    						<p class="price"><span>₹249</span> <a href="#" class="ml-2 btn btn-white btn-outline-white">Order</a></p>
     					</div>
     				</div>
     			</div>
     		</div>
     	</div>
 
+      <!-- Interactive Pizza Builder Section -->
+      <div class="container my-5 py-4">
+        <div id="pizza-builder-mount"></div>
+      </div>
+
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Our Menu Pricing</h2>
             <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-            <p class="mt-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p class="mt-5">Transparent pricing in Indian Rupees (₹) for all our signature pizzas and delights.</p>
           </div>
         </div>
         <div class="row">
         	<div class="col-md-6">
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-1.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
 	        				<h3><span>Italian Pizza</span></h3>
-	        				<span class="price">$20.00</span>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹399</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Hand-stretched sourdough base with plum tomato sauce and mozzarella.</p>
 	        			</div>
         			</div>
         		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-2.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Hawaiian Pizza</span></h3>
-	        				<span class="price">$29.00</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Hawaiian Delight</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹499</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Sweet juicy pineapples, bell peppers, sweet corn, and melted mozzarella.</p>
 	        			</div>
 	        		</div>
         		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-3.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Greek Pizza</span></h3>
-	        				<span class="price">$20.00</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Greek Salad Pizza</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹399</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Feta cheese, cherry tomatoes, kalamata olives, red onion, and fresh parsley.</p>
 	        			</div>
 	        		</div>
         		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-4.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Bacon Crispy Thins</span></h3>
-	        				<span class="price">$20.00</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Paneer Tikka Special</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹399</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Spicy marinated paneer cubes, capsicum, red onion, and tikka sauce.</p>
 	        			</div>
 	        		</div>
         		</div>
         	</div>
 
         	<div class="col-md-6">
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-5.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Hawaiian Special</span></h3>
-	        				<span class="price">$49.91</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Family Feast Box</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹799</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Large 14-inch loaded pizza with garlic breadstix and 1L cold drink.</p>
 	        			</div>
 	        		</div>
         		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-6.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Ultimate Overload</span></h3>
-	        				<span class="price">$20.00</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Ultimate Cheese Overload</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹449</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Triple cheese burst loaded with Mozzarella, Cheddar, and Gouda cheese.</p>
 	        			</div>
 	        		</div>
         		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-7.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Bacon Pizza</span></h3>
-	        				<span class="price">$20.00</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Mushroom Supreme</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹399</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Sautéed button mushrooms, truffle oil drizzle, garlic, and fresh mozzarella.</p>
 	        			</div>
 	        		</div>
         		</div>
-        		<div class="pricing-entry d-flex ftco-animate">
+        		<div class="pricing-entry d-flex ftco-animate align-items-center">
         			<div class="img" style="background-image: url(images/pizza-8.jpg);"></div>
-        			<div class="desc pl-3">
-	        			<div class="d-flex text align-items-center">
-	        				<h3><span>Ham &amp; Pineapple</span></h3>
-	        				<span class="price">$20.00</span>
+        			<div class="desc pl-3 w-100">
+	        			<div class="d-flex text align-items-center justify-content-between">
+	        				<h3><span>Veggie Feast Pizza</span></h3>
+	        				<div class="d-flex align-items-center" style="gap: 10px;">
+                    <span class="price">₹399</span>
+                    <button class="pricing-add-btn">Add +</button>
+                  </div>
 	        			</div>
 	        			<div class="d-block">
-	        				<p>A small river named Duden flows by their place and supplies</p>
+	        				<p>Capsicum, sweet corn, black olives, jalapenos, and grilled tomatoes.</p>
 	        			</div>
 	        		</div>
         		</div>
@@ -437,7 +467,7 @@
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-pizza-1"></span></div>
 		              	<strong class="number" data-number="100">0</strong>
-		              	<span>Pizza Branches</span>
+		              	<span>Pizza Outlets</span>
 		              </div>
 		            </div>
 		          </div>
@@ -446,7 +476,7 @@
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-medal"></span></div>
 		              	<strong class="number" data-number="85">0</strong>
-		              	<span>Number of Awards</span>
+		              	<span>Culinary Awards</span>
 		              </div>
 		            </div>
 		          </div>
@@ -455,7 +485,7 @@
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-laugh"></span></div>
 		              	<strong class="number" data-number="10567">0</strong>
-		              	<span>Happy Customer</span>
+		              	<span>Happy Customers</span>
 		              </div>
 		            </div>
 		          </div>
@@ -464,7 +494,7 @@
 		              <div class="text">
 		              	<div class="icon"><span class="flaticon-chef"></span></div>
 		              	<strong class="number" data-number="900">0</strong>
-		              	<span>Staff</span>
+		              	<span>Expert Chefs</span>
 		              </div>
 		            </div>
 		          </div>
@@ -502,9 +532,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-1.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Italian Pizza</a></h3>
+		              					<p>Classic artisan dough topped with mozzarella and San Marzano tomato sauce.</p>
+		              					<p class="price"><span>₹249</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -513,9 +543,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-2.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Veggie Paradise</a></h3>
+		              					<p>Capsicum, sweet corn, black olives, jalapenos, and grilled tomatoes.</p>
+		              					<p class="price"><span>₹249</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -524,9 +554,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-3.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Cheese Burst Supreme</a></h3>
+		              					<p>Liquid cheese stuffed crust with extra herbs and garlic butter polish.</p>
+		              					<p class="price"><span>₹299</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -540,9 +570,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Lemonade Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Fresh Lemonade</a></h3>
+		              					<p>Chilled natural lemon drink with mint and black salt twist.</p>
+		              					<p class="price"><span>₹99</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -551,9 +581,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Pineapple Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Pineapple Cooler</a></h3>
+		              					<p>Freshly squeezed tropical pineapple juice with crushed ice.</p>
+		              					<p class="price"><span>₹119</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -562,9 +592,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Soda Drinks</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Fizzy Soda Drinks</a></h3>
+		              					<p>Chilled carbonated refreshing beverages in choice of flavors.</p>
+		              					<p class="price"><span>₹79</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -578,9 +608,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-1.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Classic Veggie Smash Burger</a></h3>
+		              					<p>Crispy potato-veggie patty with thousand island dressing and lettuce.</p>
+		              					<p class="price"><span>₹179</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -589,9 +619,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-2.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Crispy Paneer Supreme Burger</a></h3>
+		              					<p>Spicy fried paneer patty loaded with melted cheese slice and mayo.</p>
+		              					<p class="price"><span>₹199</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -600,9 +630,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/burger-3.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Double Cheese Crunch Burger</a></h3>
+		              					<p>Twin patties stacked with cheddar cheese, caramelized onions & pickles.</p>
+		              					<p class="price"><span>₹249</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -616,9 +646,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-1.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Creamy Alfredo Fettuccine</a></h3>
+		              					<p>Rich white sauce pasta tossed with butter, parmesan cheese & herbs.</p>
+		              					<p class="price"><span>₹279</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -627,9 +657,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-2.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Spicy Penne Arrabbiata</a></h3>
+		              					<p>Penne in fiery tomato sauce with chili flakes, garlic, and fresh basil.</p>
+		              					<p class="price"><span>₹299</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -638,9 +668,9 @@
 		              			<div class="menu-wrap">
 		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pasta-3.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
+		              					<h3><a href="#">Classic Basil Pesto Pasta</a></h3>
+		              					<p>Fresh pine nut & basil pesto sauce tossed with olive oil and pine nuts.</p>
+		              					<p class="price"><span>₹319</span></p>
 		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
 		              				</div>
 		              			</div>
@@ -659,8 +689,8 @@
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Recent from blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h2 class="mb-4">Recent From Our Blog</h2>
+            <p>Explore stories, recipes, and pizza culture from Pizza Mania chefs.</p>
           </div>
         </div>
         <div class="row d-flex">
@@ -670,12 +700,12 @@
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
+                  <div><a href="#">Sept 10, 2026</a></div>
+                  <div><a href="#">Chef Admin</a></div>
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="blog-single.html">Secrets of Neapolitan Pizza Dough</a></h3>
+                <p>Learn how 48-hour fermentation creates the lightest, fluffiest crust imaginable.</p>
               </div>
             </div>
           </div>
@@ -685,12 +715,12 @@
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><a href="#">Sept 15, 2026</a></div>
+                  <div><a href="#">Chef Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 5</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="blog-single.html">The Art of Wood-Fired Baking</a></h3>
+                <p>Why 450°C brick oven baking locks in moisture and smoky aroma.</p>
               </div>
             </div>
           </div>
@@ -700,12 +730,12 @@
               </a>
               <div class="text py-4 d-block">
               	<div class="meta">
-                  <div><a href="#">Sept 10, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+                  <div><a href="#">Sept 20, 2026</a></div>
+                  <div><a href="#">Chef Admin</a></div>
+                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 8</a></div>
                 </div>
-                <h3 class="heading mt-2"><a href="#">The Delicious Pizza</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading mt-2"><a href="blog-single.html">Pairing Pizza with Fresh Mocktails</a></h3>
+                <p>Discover top beverage combinations that elevate your meal to perfection.</p>
               </div>
             </div>
           </div>
@@ -719,26 +749,26 @@
     	<div class="container-wrap">
     		<div class="row no-gutters d-md-flex align-items-center">
     			<div class="col-md-6 d-flex align-self-stretch">
-    				<div id="map"></div>
+    				<div id="map" style="width: 100%; min-height: 400px;"></div>
     			</div>
 	    		<div class="col-md-6 appointment ftco-animate">
-	    			<h3 class="mb-3">Contact Us</h3>
+	    			<h3 class="mb-3">Contact Us & Book Table</h3>
 	    			<form action="#" class="appointment-form">
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="First Name">
+		    					<input type="text" class="form-control" placeholder="First Name" required>
 		    				</div>
 	    				</div>
-	    				<div class="d-me-flex">
+	    				<div class="d-md-flex">
 	    					<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="Last Name">
+		    					<input type="text" class="form-control" placeholder="Last Name" required>
 		    				</div>
 	    				</div>
 	    				<div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
+	              <textarea name="message" cols="30" rows="3" class="form-control" placeholder="Message or Special Request" required></textarea>
 	            </div>
 	            <div class="form-group">
-	              <input type="submit" value="Send" class="btn btn-primary py-3 px-4">
+	              <input type="submit" value="Send Message" class="btn btn-primary py-3 px-4">
 	            </div>
 	    			</form>
 	    		</div>    			
@@ -753,7 +783,7 @@
           <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Pizza Mania brings artisan wood-fired Italian pizzas and fusion delicacies to pizza lovers across India.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -767,9 +797,9 @@
               <div class="block-21 mb-4 d-flex">
                 <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <h3 class="heading"><a href="blog-single.html">Secrets of Neapolitan Pizza Dough</a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 10, 2026</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
                     <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
@@ -778,9 +808,9 @@
               <div class="block-21 mb-4 d-flex">
                 <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <h3 class="heading"><a href="blog-single.html">The Art of Wood-Fired Baking</a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2026</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
                     <div><a href="#"><span class="icon-chat"></span> 19</a></div>
                   </div>
@@ -792,21 +822,21 @@
              <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">Services</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Cooked</a></li>
-                <li><a href="#" class="py-2 d-block">Deliver</a></li>
-                <li><a href="#" class="py-2 d-block">Quality Foods</a></li>
-                <li><a href="#" class="py-2 d-block">Mixed</a></li>
+                <li><a href="services.html" class="py-2 d-block">Wood-Fired Pizza</a></li>
+                <li><a href="services.html" class="py-2 d-block">30-Min Fast Delivery</a></li>
+                <li><a href="services.html" class="py-2 d-block">Quality Ingredients</a></li>
+                <li><a href="services.html" class="py-2 d-block">Catering & Events</a></li>
               </ul>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Have Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Connaught Place, Inner Circle, New Delhi - 110001</span></li>
+	                <li><a href="tel:+919876543210"><span class="icon icon-phone"></span><span class="text">+91 98765 43210</span></a></li>
+	                <li><a href="mailto:order@pizzamania.in"><span class="icon icon-envelope"></span><span class="text">order@pizzamania.in</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -814,20 +844,14 @@
         </div>
         <div class="row">
           <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Pizza Mania India</p>
           </div>
         </div>
       </div>
     </footer>
     
-  
-
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -843,9 +867,10 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
     
   </body>
 </html>
